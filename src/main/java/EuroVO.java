@@ -6,9 +6,6 @@ public class EuroVO {
     private CurrencyUnit currencyUnitEUR;
     private Double currencyValue;
 
-    protected void euroVO() {
-    }
-
     public EuroVO euroVO(String currencyUnit, Double currencyValue) {
         try {
             if (currencyUnit.equals("EUR")) {
