@@ -1,9 +1,7 @@
 import org.junit.Assert;
 import org.junit.Test;
 
-import javax.money.CurrencyUnit;
-import javax.money.Monetary;
-import javax.money.UnknownCurrencyException;
+import javax.money.*;
 
 public class test_EuroVO {
 
@@ -18,4 +16,11 @@ public void throwsError_currencyCode_whenNoExist(){
     Monetary.getCurrency("XYZ");
 }
 
+@Test
+public void get_euro_value_object(){
+    EuroVO euroVO = new EuroVO();
+    euroVO.euroVO("EUR",200.0);
+    Assert.assertEquals("EUR", euroVO.getCurrencyUnitEUR().getCurrencyCode());
+    Assert.assertEquals(200.0, 200.0,0);
+}
 }
