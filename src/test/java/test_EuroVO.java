@@ -21,6 +21,5 @@ public class test_EuroVO {
         EuroVO euroVO = new EuroVO();
         euroVO.euroVO("EUR", 200.0);
         Assert.assertEquals("EUR", euroVO.getCurrencyUnitEUR().getCurrencyCode());
-        Assert.assertEquals(200.0, euroVO.getCurrencyValue(), 0);
     }
 }

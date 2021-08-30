@@ -2,14 +2,11 @@ import java.util.List;
 
 public class EuroVOImplementation {
 
-
-    public Double sumOfEuros(List<EuroVO> euroVOList) {
-        Double sum = 0.0;
+    public double sumOfEuros(List<EuroVO> euroVOList) {
+        double sumMoney = 0.0;
         for (EuroVO euroVO : euroVOList) {
-            sum += euroVO.getCurrencyValue();
+            sumMoney += euroVO.getEuroAmount().getNumber().doubleValue();
         }
-        return sum;
+        return sumMoney;
     }
-
-
 }

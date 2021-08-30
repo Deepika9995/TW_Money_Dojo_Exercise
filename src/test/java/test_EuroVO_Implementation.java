@@ -1,6 +1,5 @@
 import org.junit.Assert;
 import org.junit.Test;
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +15,7 @@ public class test_EuroVO_Implementation {
             euroVOList.add(euroVO.euroVO("EUR", v));
         }
         EuroVOImplementation euroVOImplementation = new EuroVOImplementation();
+
         Assert.assertEquals(50.0, euroVOImplementation.sumOfEuros(euroVOList), 0);
     }
 

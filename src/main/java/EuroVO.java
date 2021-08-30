@@ -1,16 +1,17 @@
 import javax.money.CurrencyUnit;
 import javax.money.Monetary;
+import javax.money.MonetaryAmount;
 import javax.money.UnknownCurrencyException;
 
 public class EuroVO {
     private CurrencyUnit currencyUnitEUR;
-    private Double currencyValue;
+    private MonetaryAmount euroAmount;
 
     public EuroVO euroVO(String currencyUnit, Double currencyValue) {
         try {
             if (currencyUnit.equals("EUR")) {
                 this.currencyUnitEUR = Monetary.getCurrency(currencyUnit);
-                this.currencyValue = currencyValue;
+                euroAmount = Monetary.getDefaultAmountFactory().setCurrency(currencyUnit).setNumber(currencyValue).create();
             }
         } catch (UnknownCurrencyException unknownCurrencyException) {
             System.out.println("Invalid currency unit!.." + unknownCurrencyException);
@@ -22,7 +23,7 @@ public class EuroVO {
         return currencyUnitEUR;
     }
 
-    public Double getCurrencyValue() {
-        return currencyValue;
+    public MonetaryAmount getEuroAmount() {
+        return euroAmount;
     }
 }
